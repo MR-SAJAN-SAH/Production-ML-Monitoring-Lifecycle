@@ -1,0 +1,26 @@
+project:
+  name: Production-ML-Monitoring-Lifecycle
+  version: 1.0.0
+
+paths:
+  data:
+    raw: data/raw/telco_customer_churn_dataset.csv
+    reference: data/reference/reference_data.csv
+    production: data/production/production_data.csv
+
+  models:
+    directory: models
+    model_active: models/model_v1.pkl
+    scaler: models/scaler.pkl
+    features: models/feature_names.pkl
+
+api:
+  host: 0.0.0.0
+  port: 8000
+
+monitoring:
+  drift_threshold: 0.05
+
+training:
+  test_size: 0.2
+  random_state: 42
